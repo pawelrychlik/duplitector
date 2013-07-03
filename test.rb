@@ -13,7 +13,7 @@ class Org
   def to_json
     hash = {}
     self.instance_variables.each do |var|
-      hash[var.to_s[1..-1]] = self.instance_variable_get var
+      hash[var.to_s[1..-1]] = [ self.instance_variable_get(var) ]
     end
     hash.to_json
   end
@@ -23,50 +23,71 @@ class Org
   end
 end
 
+class TestData
+  def self.read_organizations
 
-def readOrganizations
+    def self.prepare_test_data
+      file = File.new('FoundationCenter.txt', 'r')
+      # skip headers:
+      file.gets
+      file
+    end
 
-  def prepareTestData
-    file = File.new('FoundationCenter.txt', 'r')
-    # skip headers:
-    file.gets
-    file
+    organizations = []
+
+    file = prepare_test_data
+    while (line = file.gets)
+      org = Org.new(line.split(/\t+/))
+      puts "Entry parsed: #{org}"
+
+      organizations.push org
+    end
+
+    organizations
+  end
+end
+
+class Deduplicator
+
+  def initialize
+    @idx = 'temp' # elasticsearch index & type name
+    @server = Stretcher::Server.new('http://localhost:9200')
+    # Prepare an empty index
+    @server.index(@idx).delete rescue nil
+    @server.index(@idx).create()
+    sleep 1
   end
 
-  organizations = []
+  def dedupe(org)
+    # TODO prepare query template & fill with data
+    query = { match_all: {} }
+    res = @server.index(@idx).search(size: 10, query: query)
 
-  file = prepareTestData
-  while (line = file.gets)
-    org = Org.new(line.split(/\t+/))
-    puts "Entry parsed: #{org}"
-
-    organizations.push org
+    if is_duplicate(res)
+      # TODO
+      # GET the group & append new org values to existing arrays
+      # update the group
+    else
+      # save as a new organization:
+      org_as_json = org.to_json
+      puts "Creating new organization: #{org_as_json}"
+      @server.index(@idx).type(@idx).put(org.id, org_as_json)
+    end
   end
 
-  organizations
+  def is_duplicate(res)
+    # TODO parse the response & make a decision
+    false
+  end
 end
 
-organizations = readOrganizations
 
-# index
-idx = :temp
+organizations = TestData.read_organizations
 
-server = Stretcher::Server.new('http://localhost:9200')
+deduplicator = Deduplicator.new()
 
-# Prepare an empty index
-server.index(idx).delete rescue nil
-server.index(idx).create()
-
-organizations.each do |o|
-  server.index(idx).type(idx).put(o.id, o.to_json)
+organizations.each do |org|
+  deduplicator.dedupe org
 end
 
-def dedupe(org)
-  server.index(idx).type(idx).put(org.id, org.to_json)
-end
-
-# Retrieve a document
-server.index(idx).type(idx).get(3)
-# => #<Hashie::Mash text="Hello 3">
-# Perform a search (Returns a Stretcher::SearchResults instance)
-res = server.index(idx).search(size: 12, query: {match_all: {}})
+puts 'Done.'
