@@ -1,0 +1,72 @@
+# require 'rest-client'
+require 'stretcher'
+
+class Org
+  attr_accessor :id, :name, :address1, :address2, :city, :state, :postal_code, :country, :gov_id1, :gov_id2, :gov_id3,
+      :url, :telephone, :fax, :email, :date_updated, :group_id
+
+  def initialize(array)
+    @id, @name, @address1, @address2, @city, @state, @postal_code, @country, @gov_id1, @gov_id2, @gov_id3, @url,
+        @telephone, @fax, @email, @date_updated, @group_id = array
+  end
+
+  def to_json
+    hash = {}
+    self.instance_variables.each do |var|
+      hash[var.to_s[1..-1]] = self.instance_variable_get var
+    end
+    hash.to_json
+  end
+
+  def to_s
+    "Org{ ID: #{@id}, name: #{@name} }"
+  end
+end
+
+
+def readOrganizations
+
+  def prepareTestData
+    file = File.new('FoundationCenter.txt', 'r')
+    # skip headers:
+    file.gets
+    file
+  end
+
+  organizations = []
+
+  file = prepareTestData
+  while (line = file.gets)
+    org = Org.new(line.split(/\t+/))
+    puts "Entry parsed: #{org}"
+
+    organizations.push org
+  end
+
+  organizations
+end
+
+organizations = readOrganizations
+
+# index
+idx = :temp
+
+server = Stretcher::Server.new('http://localhost:9200')
+
+# Prepare an empty index
+server.index(idx).delete rescue nil
+server.index(idx).create()
+
+organizations.each do |o|
+  server.index(idx).type(idx).put(o.id, o.to_json)
+end
+
+def dedupe(org)
+  server.index(idx).type(idx).put(org.id, org.to_json)
+end
+
+# Retrieve a document
+server.index(idx).type(idx).get(3)
+# => #<Hashie::Mash text="Hello 3">
+# Perform a search (Returns a Stretcher::SearchResults instance)
+res = server.index(idx).search(size: 12, query: {match_all: {}})
