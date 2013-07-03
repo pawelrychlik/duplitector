@@ -1,0 +1,35 @@
+{
+    "query": {
+        "filtered": {
+			"query": {
+				"bool": {
+					"should": [
+						{
+							"fuzzy_like_this": {
+								"like_text": "Milk Bar",
+								"fields": [ "Names.OrganizationName" ],
+								"max_query_terms": 3,
+								"min_similarity": 0.4
+							}
+						},
+						{
+							"fuzzy_like_this": {
+								"like_text": "EIN366110271",
+								"fields": [ "LegalIdentifiers.NormalizedIdentifier" ],
+								"max_query_terms": 1,
+								"prefix_length": 3,
+								"boost": 10.0
+							}
+						}
+					],
+					"must": [],
+					"minimum_should_match": 1
+				}
+			},
+			"filter": {
+				"term": { "IsActive": false }
+			}
+		}
+    },
+    "size": 2
+}
