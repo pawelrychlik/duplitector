@@ -10,12 +10,12 @@ class Org
         @telephone, @fax, @email, @date_updated, @group_id = array
   end
 
-  def to_json
+  def to_hash
     hash = {}
     self.instance_variables.each do |var|
       hash[var.to_s[1..-1]] = [ self.instance_variable_get(var) ]
     end
-    hash.to_json
+    hash
   end
 
   def to_s
@@ -63,21 +63,28 @@ class Deduplicator
     query = { match_all: {} }
     res = @server.index(@idx).search(size: 10, query: query)
 
-    if is_duplicate(res)
+    if duplicate = is_duplicate(res)
+
       # TODO
       # GET the group & append new org values to existing arrays
       # update the group
+      puts "Found duplicate: #{duplicate}"
     else
       # save as a new organization:
-      org_as_json = org.to_json
+      org_as_json = org.to_hash.to_json
       puts "Creating new organization: #{org_as_json}"
       @server.index(@idx).type(@idx).put(org.id, org_as_json)
     end
   end
 
   def is_duplicate(res)
-    # TODO parse the response & make a decision
-    false
+    results = res.results.sort_by(&:_score)
+    duplicates = results.select { |item| item._score > 1.5 }
+    if duplicates.empty?
+      nil
+    else
+      duplicate.first
+    end
   end
 end
 
