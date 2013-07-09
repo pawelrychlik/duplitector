@@ -3,7 +3,8 @@ require 'stretcher'
 require_relative 'test_data'
 require_relative 'deduplicator'
 
-organizations = TestData.read_organizations
+limit = 10
+organizations = TestData.read_organizations limit
 deduplicator = Deduplicator.new
 
 organizations.each do |org|
