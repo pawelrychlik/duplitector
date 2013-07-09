@@ -1,34 +1,27 @@
 # require 'rest-client'
 require 'stretcher'
 
-class Org
-  attr_accessor :id, :name, :address1, :address2, :city, :state, :postal_code, :country, :gov_id1, :gov_id2, :gov_id3,
-      :url, :telephone, :fax, :email, :date_updated, :group_id
+class OrgHelper
+  @@keys = %w( id name address1 address2 city state postal_code country gov_id1 gov_id2 gov_id3 url telephone fax mail
+                date_updated group_id )
 
-  def initialize(array)
-    @id, @name, @address1, @address2, @city, @state, @postal_code, @country, @gov_id1, @gov_id2, @gov_id3, @url,
-        @telephone, @fax, @email, @date_updated, @group_id = array
-  end
-
-  # wraps every entry into an array
-  def to_hash
-    hash = {}
-    self.instance_variables.each do |var|
-      hash[var.to_s[1..-1]] = [ self.instance_variable_get(var) ]
-    end
-    hash
-  end
-
-  def merge_with(other_hash)
-    self.to_hash.merge(other_hash) do |key, a, b|
-      # merging duplicate keys is about putting all their values to a common array
-      a.push(*b)
+  def self.from_array(array)
+   @@keys.zip(array).inject({}) do |k, v|
+      k.merge!({ v[0] => [ v[1] ] })
     end
   end
 
-  def to_s
-    "Org{ ID: #{@id}, name: #{@name} }"
+  def self.merge(hash1, hash2)
+    hash1.merge(hash2) do |key, a, b|
+      if a.kind_of?(Array) then
+        # merging duplicate keys is about putting all their values to a common array
+        a.push(*b)
+      else
+        a != nil ? a : b
+      end
+    end
   end
+
 end
 
 class TestData
@@ -45,13 +38,21 @@ class TestData
 
     file = prepare_test_data
     while (line = file.gets)
-      org = Org.new(line.split(/\t+/))
+      org = OrgHelper.from_array(line.split(/\t+/))
       puts "Entry parsed: #{org}"
 
       organizations.push org
     end
 
     organizations
+  end
+end
+
+class ElasticsearchIdGenerator
+  @@id = 0
+
+  def self.get_next
+    @@id += 1
   end
 end
 
@@ -74,14 +75,15 @@ class Deduplicator
     if (duplicate = is_duplicate(res))
       puts "Found duplicate: #{duplicate}"
 
-      merged = org.merge_with(duplicate)
-      @server.index(@idx).type(@idx).put(org.id, merged)
+      # merge duplicate with existing organization
+      merged = OrgHelper.merge(org, duplicate)
+      @server.index(@idx).type(@idx).put(merged['es_id'], merged)
       puts "Merged duplicates into an existing organization: #{merged}"
     else
       # save as a new organization:
-      org_as_json = org.to_hash.to_json
-      @server.index(@idx).type(@idx).put(org.id, org_as_json)
-      puts "Created new organization: #{org_as_json}"
+      id = org['es_id'] = ElasticsearchIdGenerator.get_next
+      @server.index(@idx).type(@idx).put(id, org)
+      puts "Created new organization: #{org}"
     end
   end
 
