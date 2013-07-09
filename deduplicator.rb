@@ -13,13 +13,14 @@ class Deduplicator
     sleep 1
   end
 
-  def dedupe(org)
-    # TODO prepare query template & fill with data
-    query = QueryBuilder.detect_duplicates_of org
+  def dedupe(org_flat)
+    query = QueryBuilder.detect_duplicates_of org_flat
 
-    res = @server.index(@idx).search(size: 10, query: query)
+    search_response = @server.index(@idx).search(size: 10, query: query)
 
-    if (duplicate = is_duplicate(res))
+    org = OrgHelper.with_attributes_as_arrays org_flat
+
+    if (duplicate = is_duplicate(search_response))
       puts "Found duplicate: #{duplicate}"
 
       # merge duplicate with existing organization
@@ -36,7 +37,7 @@ class Deduplicator
 
   def is_duplicate(res)
     results = res.results.sort_by(&:_score)
-    duplicates = results.select { |item| item._score > 1.5 }
+    duplicates = results.select { |item| item._score > 0.5 }
     if duplicates.empty?
       nil
     else
