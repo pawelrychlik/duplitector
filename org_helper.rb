@@ -10,7 +10,7 @@ class OrgHelper
 
   # e.g. { id: "abc" } becomes { id: [ "abc" ] }
   def self.with_attributes_as_arrays(org)
-    org.each { |_, v| [ v ] }
+    Hash[org.map { |k, v| [ k, [v] ] } ]
   end
 
   def self.merge(hash1, hash2)

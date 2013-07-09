@@ -49,7 +49,7 @@ class Deduplicator
 
   def is_duplicate(response)
     results = response.results.sort_by(&:_score)
-    duplicates = results.select { |item| item._score > 0.0 }
+    duplicates = results.select { |item| item._score > 0.2 }
     if duplicates.empty?
       @log.info "No potential duplicates found. Highest score: #{results.first._score unless results.empty?}"
       nil

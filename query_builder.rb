@@ -4,8 +4,8 @@ class QueryBuilder
 
   def self.detect_duplicates_of(org_flat)
     {
-        query: v1(org_flat),
-        size: 10
+        query: v2(org_flat),
+        size: 5
     }
   end
 
@@ -29,35 +29,28 @@ class QueryBuilder
 
   def self.v2(org)
     {
-        filtered: {
-            query: {
-                bool: {
-                    should: [
-                        {
-                            fuzzy_like_this: {
-                                like_text: org['name'],
-                                fields: ['name'],
-                                max_query_terms: 3,
-                                min_similarity: 0.4
-                            }
-                        },
-                        {
-                            fuzzy_like_this: {
-                                like_text: org['id'],
-                                fields: ['id'],
-                                max_query_terms: 1,
-                                prefix_length: 3,
-                                boost: 10.0
-                            }
-                        }
-                    ],
-                    must: [],
-                    minimum_should_match: 1
+        bool: {
+            should: [
+                {
+                    fuzzy_like_this: {
+                        like_text: org['name'],
+                        fields: ['name'],
+                        max_query_terms: 3,
+                        min_similarity: 0.4
+                    }
+                },
+                {
+                    fuzzy_like_this: {
+                        like_text: org['gov_id1'],
+                        fields: ['gov_id1'],
+                        max_query_terms: 1,
+                        prefix_length: 3,
+                        boost: 10.0
+                    }
                 }
-            },
-            filter: {
-                term: {IsActive: false}
-            }
+            ],
+            must: [],
+            minimum_should_match: 1
         }
     }
   end
