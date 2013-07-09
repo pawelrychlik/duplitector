@@ -10,12 +10,20 @@ class Org
         @telephone, @fax, @email, @date_updated, @group_id = array
   end
 
+  # wraps every entry into an array
   def to_hash
     hash = {}
     self.instance_variables.each do |var|
       hash[var.to_s[1..-1]] = [ self.instance_variable_get(var) ]
     end
     hash
+  end
+
+  def merge_with(other_hash)
+    self.to_hash.merge(other_hash) do |key, a, b|
+      # merging duplicate keys is about putting all their values to a common array
+      a.push(*b)
+    end
   end
 
   def to_s
@@ -63,17 +71,17 @@ class Deduplicator
     query = { match_all: {} }
     res = @server.index(@idx).search(size: 10, query: query)
 
-    if duplicate = is_duplicate(res)
-
-      # TODO
-      # GET the group & append new org values to existing arrays
-      # update the group
+    if (duplicate = is_duplicate(res))
       puts "Found duplicate: #{duplicate}"
+
+      merged = org.merge_with(duplicate)
+      @server.index(@idx).type(@idx).put(org.id, merged)
+      puts "Merged duplicates into an existing organization: #{merged}"
     else
       # save as a new organization:
       org_as_json = org.to_hash.to_json
-      puts "Creating new organization: #{org_as_json}"
       @server.index(@idx).type(@idx).put(org.id, org_as_json)
+      puts "Created new organization: #{org_as_json}"
     end
   end
 
@@ -83,7 +91,8 @@ class Deduplicator
     if duplicates.empty?
       nil
     else
-      duplicate.first
+      # take the one with the highest score, process it, return it
+      duplicates.first.to_hash.select { |key, value| key.match(/^[^_]/) }
     end
   end
 end
