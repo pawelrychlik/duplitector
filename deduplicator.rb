@@ -4,20 +4,26 @@ require_relative 'query_builder'
 
 class Deduplicator
 
-  def initialize
+  def initialize(log)
+    @log = log
+
     @idx = 'temp' # elasticsearch index & type name
-    @server = Stretcher::Server.new('http://localhost:9200')
-                  # Prepare an empty index
+    @server = Stretcher::Server.new('http://localhost:9200', logger: log)
+
+    # Prepare an empty index
     @server.index(@idx).delete rescue nil
     @server.index(@idx).create()
     sleep 1
   end
 
   def dedupe(org_flat)
-    puts "Processing: #{org_flat}"
-    query = QueryBuilder.detect_duplicates_of org_flat
+    @log.info "Processing: #{org_flat}"
 
-    search_response = @server.index(@idx).search(size: 10, query: query)
+    query = QueryBuilder.detect_duplicates_of org_flat
+    @log.debug "Query: #{query.to_json}"
+
+    search_response = @server.index(@idx).type(@idx).search({}, query)
+    @log.debug "Search response: #{search_response}"
 
     org = OrgHelper.with_attributes_as_arrays org_flat
 
@@ -25,26 +31,27 @@ class Deduplicator
       # merge duplicate with existing organization
       merged = OrgHelper.merge(org, duplicate)
       @server.index(@idx).type(@idx).put(merged['es_id'], merged)
-      puts "Merged duplicates into an existing organization: #{merged}"
+      @log.info "Merged duplicates into an existing organization: #{merged}"
     else
       # save as a new organization:
       id = org['es_id'] = ElasticsearchIdGenerator.get_next
       @server.index(@idx).type(@idx).put(id, org)
-      puts "Created new organization: #{org}"
+      @log.info "Created new organization: #{org}"
     end
 
+    @server.index(@idx).refresh
     puts
   end
 
-  def is_duplicate(search_response)
-    results = search_response.results.sort_by(&:_score)
-    duplicates = results.select { |item| item._score > 0.5 }
+  def is_duplicate(response)
+    results = response.results.sort_by(&:_score)
+    duplicates = results.select { |item| item._score > 0.0 }
     if duplicates.empty?
-      puts "No potential duplicates found."
+      @log.info "No potential duplicates found. Highest score: #{results.first._score unless results.empty?}"
       nil
     else
       duplicate = duplicates.first
-      puts "Found potential duplicates. Highest score: #{duplicate._score}"
+      @log.info "Found potential duplicates. Highest score: #{duplicate._score}"
 
       # take the one with the highest score, process it, return it
       duplicate.to_hash.select { |key, value| key.match(/^[^_]/) }

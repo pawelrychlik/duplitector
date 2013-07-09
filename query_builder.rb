@@ -2,10 +2,11 @@ require 'json'
 
 class QueryBuilder
 
-  # @query_template = JSON.parse(IO.read('query-template.json'))
-
   def self.detect_duplicates_of(org_flat)
-    v1(org_flat)
+    {
+        query: v1(org_flat),
+        size: 10
+    }
   end
 
   private
