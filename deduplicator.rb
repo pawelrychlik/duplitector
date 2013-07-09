@@ -14,6 +14,7 @@ class Deduplicator
   end
 
   def dedupe(org_flat)
+    puts "Processing: #{org_flat}"
     query = QueryBuilder.detect_duplicates_of org_flat
 
     search_response = @server.index(@idx).search(size: 10, query: query)
@@ -21,8 +22,6 @@ class Deduplicator
     org = OrgHelper.with_attributes_as_arrays org_flat
 
     if (duplicate = is_duplicate(search_response))
-      puts "Found duplicate: #{duplicate}"
-
       # merge duplicate with existing organization
       merged = OrgHelper.merge(org, duplicate)
       @server.index(@idx).type(@idx).put(merged['es_id'], merged)
@@ -33,16 +32,22 @@ class Deduplicator
       @server.index(@idx).type(@idx).put(id, org)
       puts "Created new organization: #{org}"
     end
+
+    puts
   end
 
-  def is_duplicate(res)
-    results = res.results.sort_by(&:_score)
+  def is_duplicate(search_response)
+    results = search_response.results.sort_by(&:_score)
     duplicates = results.select { |item| item._score > 0.5 }
     if duplicates.empty?
+      puts "No potential duplicates found."
       nil
     else
+      duplicate = duplicates.first
+      puts "Found potential duplicates. Highest score: #{duplicate._score}"
+
       # take the one with the highest score, process it, return it
-      duplicates.first.to_hash.select { |key, value| key.match(/^[^_]/) }
+      duplicate.to_hash.select { |key, value| key.match(/^[^_]/) }
     end
   end
 end

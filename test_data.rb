@@ -15,7 +15,7 @@ class TestData
     file = prepare_test_data
     while (line = file.gets)
       org = OrgHelper.from_array(line.split(/\t+/))
-      puts "Entry parsed: #{org}"
+      #puts "Entry parsed: #{org}"
 
       organizations.push org
     end
