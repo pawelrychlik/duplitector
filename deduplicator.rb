@@ -1,10 +1,12 @@
 require_relative 'org_helper'
 require_relative 'elasticsearch_id_generator'
 require_relative 'query_builder'
+require_relative 'stats'
 
 class Deduplicator
 
-  def initialize(log)
+  def initialize(stats, log)
+    @stats = stats
     @log = log
 
     @idx = 'temp' # elasticsearch index & type name
@@ -32,11 +34,13 @@ class Deduplicator
       merged = OrgHelper.merge(org, duplicate)
       @server.index(@idx).type(@idx).put(merged['es_id'], merged)
       @log.info "Merged duplicates into an existing organization: #{merged}"
+      @stats.duplicate
     else
       # save as a new organization:
       id = org['es_id'] = ElasticsearchIdGenerator.get_next
       @server.index(@idx).type(@idx).put(id, org)
       @log.info "Created new organization: #{org}"
+      @stats.not_duplicate
     end
 
     @server.index(@idx).refresh
@@ -52,7 +56,6 @@ class Deduplicator
     else
       duplicate = duplicates.first
       @log.info "Found potential duplicates. Highest score: #{duplicate._score}"
-
       # take the one with the highest score, process it, return it
       duplicate.to_hash.select { |key, value| key.match(/^[^_]/) }
     end
