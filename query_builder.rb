@@ -17,7 +17,7 @@ class QueryBuilder
             should: [
                 {
                     fuzzy_like_this: {
-                        like_text: org['name'],
+                        like_text: org['name'] || '',
                         fields: ['name']
                     }
                 }
@@ -33,7 +33,7 @@ class QueryBuilder
             should: [
                 {
                     fuzzy_like_this: {
-                        like_text: org['name'],
+                        like_text: org['name'] || '',
                         fields: ['name'],
                         max_query_terms: 3,
                         min_similarity: 0.4
@@ -41,7 +41,7 @@ class QueryBuilder
                 },
                 {
                     fuzzy_like_this: {
-                        like_text: org['gov_id1'],
+                        like_text: org['gov_id1'] || '',
                         fields: ['gov_id1'],
                         max_query_terms: 1,
                         prefix_length: 3,
