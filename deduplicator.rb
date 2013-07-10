@@ -2,6 +2,7 @@ require_relative 'org_helper'
 require_relative 'elasticsearch_id_generator'
 require_relative 'query_builder'
 require_relative 'stats'
+require_relative 'mapping_provider'
 
 class Deduplicator
 
@@ -16,6 +17,10 @@ class Deduplicator
     @server.index(@idx).delete rescue nil
     @server.index(@idx).create()
     sleep 1
+
+    @mapping_provider = MappingProvider.new
+
+    @server.index(@idx).type(@idx).put_mapping(@mapping_provider.mapping)
   end
 
   def dedupe(org_flat)
