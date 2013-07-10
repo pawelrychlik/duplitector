@@ -25,7 +25,7 @@ class TestData
 
     counter = 0
     while !limits_exceeded(counter, n) and line = file.gets
-      org = OrgHelper.from_array(line.split(/\t+/))
+      org = OrgHelper.from_array(line.split(/\t/))
       @log.debug "Entry parsed: #{org}"
 
       organizations.push org
