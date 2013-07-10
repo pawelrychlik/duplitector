@@ -42,7 +42,6 @@ class Deduplicator
     end
 
     @client.refresh
-    puts
   end
 
   def is_duplicate(response)
