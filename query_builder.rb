@@ -1,5 +1,3 @@
-require 'json'
-
 class QueryBuilder
 
   def self.detect_duplicates_of(org_flat)
