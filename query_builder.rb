@@ -9,43 +9,63 @@ class QueryBuilder
 
   private
 
-  def self.v1(org)
-    {
-        bool: {
-            should: [
-                {
-                    fuzzy_like_this: {
-                        like_text: org['name'] || '',
-                        fields: ['name']
-                    }
-                }
-            ],
-            must: []
-        }
-    }
-  end
-
   def self.v2(org)
     {
         bool: {
             should: [
+                #{
+                #    fuzzy_like_this: {
+                #        like_text: org['id'] || '',
+                #        fields: ['id'],
+                #        max_query_terms: 1,
+                #        min_similarity: 0.9
+                #    }
+                #},
                 {
                     fuzzy_like_this: {
                         like_text: org['name'] || '',
-                        fields: ['name'],
-                        max_query_terms: 3,
-                        min_similarity: 0.4
+                        fields: %w(name),
+                        #max_query_terms: 3,
+                        min_similarity: 0.5,
+                        boost: 5.0
                     }
                 },
                 {
                     fuzzy_like_this: {
                         like_text: org['gov_id1'] || '',
-                        fields: ['gov_id1'],
-                        max_query_terms: 1,
-                        prefix_length: 3,
+                        fields: %w(gov_id1),
+                        prefix_length: 4,
+                        min_similarity: 0.9,
                         boost: 10.0
                     }
-                }
+                },
+                #{
+                #    fuzzy_like_this: {
+                #        like_text: org['city'] || '',
+                #        fields: ['city'],
+                #        max_query_terms: 3,
+                #        min_similarity: 0.6,
+                #        boost: 3
+                #    }
+                #},
+                #{
+                #    fuzzy_like_this: {
+                #        like_text: org['state'] || '',
+                #        fields: ['state'],
+                #        max_query_terms: 2,
+                #        min_similarity: 0.9,
+                #        boost: 2
+                #    }
+                #},
+                #{
+                #    fuzzy_like_this: {
+                #        like_text: org['country'] || '',
+                #        fields: ['country'],
+                #        max_query_terms: 3,
+                #        min_similarity: 0.8,
+                #        boost: 1
+                #    }
+                #},
             ],
             must: [],
             minimum_should_match: 1
