@@ -11,7 +11,7 @@ log = Logger.new(STDOUT)
 log.level = Logger::INFO
 log.datetime_format = "%H:%M:%S"
 
-organizations = TestData.new(log).read_organizations 100
+organizations = TestData.new(log).read_organizations
 log.info ''
 
 normalizer = Normalizer.new

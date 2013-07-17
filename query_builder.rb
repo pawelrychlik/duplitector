@@ -25,7 +25,6 @@ class QueryBuilder
                     fuzzy_like_this: {
                         like_text: org['name'] || '',
                         fields: %w(name),
-                        #max_query_terms: 3,
                         min_similarity: 0.5,
                         boost: 5.0
                     }
@@ -39,24 +38,23 @@ class QueryBuilder
                         boost: 10.0
                     }
                 },
-                #{
-                #    fuzzy_like_this: {
-                #        like_text: org['city'] || '',
-                #        fields: ['city'],
-                #        max_query_terms: 3,
-                #        min_similarity: 0.6,
-                #        boost: 3
-                #    }
-                #},
-                #{
-                #    fuzzy_like_this: {
-                #        like_text: org['state'] || '',
-                #        fields: ['state'],
-                #        max_query_terms: 2,
-                #        min_similarity: 0.9,
-                #        boost: 2
-                #    }
-                #},
+                {
+                    fuzzy_like_this: {
+                        like_text: org['city'] || '',
+                        fields: %w(city),
+                        min_similarity: 0.6,
+                        boost: 4.0
+                    }
+                },
+                {
+                    fuzzy_like_this: {
+                        like_text: org['state'] || '',
+                        fields: %w(state),
+                        max_query_terms: 1,
+                        min_similarity: 0.5,
+                        boost: 4.0
+                    }
+                },
                 #{
                 #    fuzzy_like_this: {
                 #        like_text: org['country'] || '',
