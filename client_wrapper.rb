@@ -23,6 +23,10 @@ class ClientWrapper
     @server.index(@idx).type(@idx).search({}, query)
   end
 
+  def all
+    @server.index(@idx).type(@idx).search({ size: 1000000 }, nil)
+  end
+
   def refresh
     @server.index(@idx).refresh
   end

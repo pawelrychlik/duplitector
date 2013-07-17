@@ -9,7 +9,7 @@ class QualityMeasurer
     ok = 0
     fail = 0
 
-    @client.search(nil).results.each { |org|
+    @client.all.results.each { |org|
       status = org['group_id'].uniq.length == 1
       if status then ok += 1 else fail += 1 end
 
