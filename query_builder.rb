@@ -13,14 +13,6 @@ class QueryBuilder
     {
         bool: {
             should: [
-                #{
-                #    fuzzy_like_this: {
-                #        like_text: org['id'] || '',
-                #        fields: ['id'],
-                #        max_query_terms: 1,
-                #        min_similarity: 0.9
-                #    }
-                #},
                 {
                     fuzzy_like_this: {
                         like_text: org['name'] || '',
@@ -30,43 +22,32 @@ class QueryBuilder
                     }
                 },
                 {
-                    fuzzy_like_this: {
-                        like_text: org['gov_id1'] || '',
-                        fields: %w(gov_id1),
-                        prefix_length: 4,
-                        min_similarity: 0.9,
-                        boost: 10.0
+                    term: {
+                        gov_id1: {
+                            term: org['gov_id1'] || '',
+                            boost: 10.0
+                        }
                     }
                 },
                 {
                     fuzzy_like_this: {
                         like_text: org['city'] || '',
                         fields: %w(city),
-                        min_similarity: 0.6,
+                        min_similarity: 0.7,
                         boost: 4.0
                     }
                 },
                 {
-                    fuzzy_like_this: {
-                        like_text: org['state'] || '',
-                        fields: %w(state),
-                        max_query_terms: 1,
-                        min_similarity: 0.5,
-                        boost: 4.0
+                    match_phrase: {
+                        state: {
+                            query: org['state'] || '',
+                            boost: 4.0
+                        }
                     }
                 },
-                #{
-                #    fuzzy_like_this: {
-                #        like_text: org['country'] || '',
-                #        fields: ['country'],
-                #        max_query_terms: 3,
-                #        min_similarity: 0.8,
-                #        boost: 1
-                #    }
-                #},
             ],
             must: [],
-            minimum_should_match: 1
+            minimum_should_match: 2
         }
     }
   end
