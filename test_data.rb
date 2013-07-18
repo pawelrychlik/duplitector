@@ -6,14 +6,14 @@ class TestData
     @log = log
   end
 
-  def read_organizations(n = nil)
+  def read_organizations(filename, n = nil)
 
     def limits_exceeded(counter, n)
       !n.nil? && counter >= n
     end
 
-    def prepare_test_data
-      file = File.new('FoundationCenter.txt', 'r')
+    def prepare_test_data(filename)
+      file = File.new(filename, 'r')
       # skip headers:
       file.gets
       file
@@ -21,7 +21,7 @@ class TestData
 
     organizations = []
 
-    file = prepare_test_data
+    file = prepare_test_data filename
 
     counter = 0
     while !limits_exceeded(counter, n) and line = file.gets

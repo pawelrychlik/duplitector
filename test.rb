@@ -11,11 +11,12 @@ log = Logger.new(STDOUT)
 log.level = Logger::INFO
 log.datetime_format = "%H:%M:%S"
 
-organizations = TestData.new(log).read_organizations
+filename = 'FoundationCenter.txt'
+org_count = nil
+organizations = TestData.new(log).read_organizations filename, org_count
 log.info ''
 
 normalizer = Normalizer.new
-
 
 url = 'http://localhost:9200'
 index = 'pawelrychlik'
