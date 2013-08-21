@@ -1,5 +1,5 @@
 class OrgHelper
-  @@keys = %w( id name address1 address2 city state postal_code country gov_id1 gov_id2 gov_id3 url telephone fax mail
+  @@keys = %w( id name type address city state postal_code country gov_id1 gov_id2 gov_id3 url telephone fax mail
                 date_updated group_id )
 
   def self.from_array(array)
