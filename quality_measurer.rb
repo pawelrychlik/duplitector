@@ -5,6 +5,10 @@ class QualityMeasurer
     @log = log
   end
 
+  # There are three types of duplicate resolution states:
+  # OK - a duplicate group resolved successfully;
+  # FAIL - a duplicate not detected, but not wrongly associated with another duplicate group; still better than ERROR;
+  # ERROR - a duplicate was erroneously associated with another duplicate group; should be avoided by all means.
   def measure
     ok = 0
     fail = 0
