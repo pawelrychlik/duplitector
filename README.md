@@ -29,5 +29,27 @@ ruby test.rb
 
 For the time being, the configuration can be adjusted directly in `test.rb` (comments included).
 
+Example output
+==============
+
+(Cut for the sake of brevity).
+
+```
+Processing: {"id"=>"00-2237333", "name"=>"Lincoln Loan Fund", "address1"=>"SOUNK", "city"=>"Fayetteville", "state"=>"AR", "country"=>"United States", "gov_id1"=>"EIN:002237333", "group_id"=>"18"}
+No potential duplicates found. Highest score: 
+Created new organization: {"id"=>["00-2237333"], "name"=>["Lincoln Loan Fund"], "address1"=>["SOUNK"], "city"=>["Fayetteville"], "state"=>["AR"], "country"=>["United States"], "gov_id1"=>["EIN:002237333"], "group_id"=>["18"], "es_id"=>99}
+
+Processing: {"id"=>"01-0140283", "name"=>"Pine Grove Cemetery Association", "address1"=>"EO", "city"=>"Brunswick", "state"=>"ME", "gov_id1"=>"EIN:010140283", "group_id"=>"48"}
+Found potential duplicates. Highest score: 3.485476
+Merged duplicates into an existing organization: {"id"=>["01-0140283", "01-0140283"], "name"=>["Pine Grove Cemetery Association", "Pine Grove Cemetery Association"], "address1"=>["EO", "EO"], "city"=>["Brunswick", "Brunswick"], "state"=>["ME", "ME"], "gov_id1"=>["EIN:010140283", "EIN:010140283"], "group_id"=>["48", "48"], "country"=>["United States"], "es_id"=>66}
+
+FAIL: "group_id"=>"98" assigned to  2 orgs.
+OK: "group_id"=>"11" assigned to  1 orgs.
+OK: "group_id"=>"10" assigned to  1 orgs.
+Duplicate resolution: OK=99, FAIL=1, ERROR=0.
+
+Done. Stats: Organizations created: 101, Organizations resolved as duplicates: 99
+```
+
 Useful resources on the subject of deduplication:
-* article by Andrei Zmievski: http://zmievski.org/2011/03/duplicates-detection-with-elasticsearch
+* [an article](http://zmievski.org/2011/03/duplicates-detection-with-elasticsearch) by [Andrei Zmievski](http://twitter.com/a)
