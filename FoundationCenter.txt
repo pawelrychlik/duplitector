@@ -1,0 +1,201 @@
+ID	Name	Type	Address	City	State/Province	Postal Code	Country	Gov ID 1	Gov ID 2	Gov ID 3	URL	Telephone	Fax	Email	Date	Group ID
+00-2293921	Lockman Fondation	PC		Habra	CA		United States	EIN:002293921								19
+01-0211500	Dyer Libraries	PC		Saco	ME		United States	EIN:010211500								85
+01-0104905	Laurel Hill Cemetery	EO		Saco			United States	EIN:010104905								36
+01-0002847	Hulls Cove Neighbourhood Assoc.	PC		Hulls Cove	ME			EIN:010002847								23
+01-0095329	Improved Order of Redmen of Maine	EO,GROUP,LODGE		Standish	ME		United States	EIN:010095329								34
+00-1058976	Newton Firefighters Children Foundation	PC		Waltham	MA		United States	EIN:001058976								13
+01-0180531	West Oxford Agriculture Society	PC		Fryeberg	ME			EIN:010180531								57
+01-0015091	Hannover Football Club	PC		Cedar Knolls	NJ			EIN:010015091								24
+00-1049015	Marshfield Womenade Inc.	PC		Marshfield	MA		United States	EIN:001049015								11
+01-0211504	Eunice Frye Home	PF		Portland	ME		United States	EIN:010211504								88
+01-0211481	Bangor Childrens Home	PC		Bangor	ME		United States	EIN:010211481								76
+01-0211481	Bangor Childrens Home	PC		Bangor	ME		United States	EIN:010211481								76
+01-0017496	Agamenticus Yacht Club of York	PC		York Harbor	ME		United States	EIN:010017496								25
+01-0211478	United Way of Eastern Maine	PC		Bangor	ME		United States	EIN:010211478								75
+00-0852649	Bethany Presbyterian Church	PC		Brookline	MA		United States	EIN:000852649								6
+01-0211500	Dyer Library Association	PC		Saco	ME		United States	EIN:010211500								85
+00-1017919	Progresive Aproach Inc.	PC		Cambridge	MA		United States	EIN:001017919								8
+01-0095329	Improved Order of Redman	EO,GROUP,LODGE		Standish	ME		United States	EIN:010095329								34
+00-0841363	Agape House of Prayer	PC		Mattapan	MA		United States	EIN:000841363								5
+01-0140290	Pine Grove Cemetery Corp	EO		Portland	ME		United States	EIN:010140290								49
+01-0131950	Plant Memorial Home	POF		Bath	ME		United States	EIN:010131950								44
+01-0024645	Bangor Symphony Orchestra	PC		Bangor	ME		United States	EIN:010024645								28
+01-0211494	Central Maine Medical Centre	PC		Lewistone				EIN:010211494								83
+00-0587764	Iglesia Bethesda Incorporated	PC		Lowel	MA		United States	EIN:000587764								2
+00-2293921	Lockman Foundation	PC		La Habra	CA		United States	EIN:002293921								19
+00-1017919	Progressive Approach Inc.	PC		Cambridge	MA		United States	EIN:001017919								8
+01-0187940	Rockland Cemetery Association	EO		Rockland	ME		United States	EIN:010187940								60
+01-0187940	Rockland Cemetery	EO		Rockland			United States	EIN:010187940								60
+00-0765634	New Hope Congregational Church	PC		Boston	MA		United States	EIN:000765634								4
+01-0132625	Order of the Eastern Star of Maine	EO,GROUP,LODGE		Gardiner	ME		United States	EIN:010132625								46
+00-1727883	New Garden Park Inc.	SO		Worcester	MA		United States	EIN:001727883								14
+01-0043788	Community Christmas Project	PC		Pittsfield	ME		United States	EIN:010043788								30
+00-1045782	Schools Helping Schools Inc.	PC		Andover	MA		United States	EIN:001045782								10
+00-0852649	Bethany Presbiterian Church	PC		Brooklyn	MA		United States	EIN:000852649								6
+01-0147000	Rangeley Library Association	PC		Rangeley	ME		United States	EIN:010147000								51
+00-2030711	Church of Lord Jesus Christ of Macedonia	PC		Newark	NJ		United States	EIN:002030711								15
+01-0153128	Greater Rumford Community Centre	PC		Rumford			United States	EIN:010153128								52
+01-0024155	Bangor Band Foundation	PC		Bangor	ME		United States	EIN:010024155								27
+00-1041338	PandoraBox Productions Inc.	PC		Brookline	MA		United States	EIN:001041338								9
+01-0130065	North Auburn Cemetery Association Inc.	EO		Auburn	ME		United States	EIN:010130065								41
+01-0211530	Maine Historical Society	PC		Portland	ME		United States									98
+01-0130065	North Auburn Cemetery Association	EO		Auburn	ME		United States	EIN:010130065								41
+00-0635913	M. Apostolico Jesucristo Es El Senor Inc.	PC		Lawrance	MA		United States	EIN:000635913								3
+01-0114721	Mechanic Falls Maple Grove Cemetery Inc.	EO		Norway	ME		United States	EIN:010114721								38
+01-0211497	President & Trustees of Colby College	PC		Watersville	ME		United States	EIN:010211497								84
+01-0056642	Demerritt Cemetery Assoc	EO		Peru	ME		United States	EIN:010056642								31
+01-0207022	Fairmount Cemetery Assoc	EO		Presque Isle	ME		United States	EIN:010207022								71
+01-0207022	Fairmount Cemetery Assoc	EO		Presque Isle	ME		United States	EIN:010207022								71
+00-1045782	School Helping School	PC		Andoberg	MA		United States	EIN:001045782								10
+01-0153960	Saint Andrews Hospital	PC		Boothbay Harbor	ME		United States	EIN:010153960								53
+01-0191550	Northern Maine Fair	PC		Prescue Isle	ME		United States	EIN:010191550								61
+01-0211513	Jackson Laboratory	PC		Bar Harbor	ME		United States	EIN:010211513								94
+00-1727883	New Garden Inc.	SO		Worcester	MA		United States	EIN:001727883								14
+01-0205019	Riverside Cemetery	EO		Ft Fairfield	ME		United States	EIN:010205019								69
+01-0211504	Eunice Fry Home	PF		Portland			United States	EIN:010211504								88
+01-0211483	Community Health and Counseling Services	PC		Bangour	MA		United States	EIN:010211483								77
+01-0024907	Bar Harbor Village Improvement Project	POF		Bar Harbor	ME		United States	EIN:010024907								29
+01-0199433	Portland Players Inc.	PC		S Portland	ME		United States	EIN:010199433								66
+00-0262650	Society of Saint Vincent De Paul of Memphis	PC		Memphis	TN		United States	EIN:000262650								1
+01-0124841	Mt. Pleasant Cemetery Corp	EO		Portland	ME		United States	EIN:010124841								40
+01-0211486	Mountain Desert Island YMCA	PC		Bar Harbor	ME		United States	EIN:010211486								80
+01-0056642	Demerit Cemetary Association	EO		Peru	ME		United States	EIN:010056642								31
+00-2030711	Church of Our Lord Jesus Christ of Macedonia	PC		Newark	NJ		United States	EIN:002030711								15
+01-0211513	Jackson Labs	PC		Bar Harbor	ME		United States	EIN:010211513								94
+01-0211502	Eastport Public Library Association	PC		Eastport	ME		United States	EIN:010211502								86
+01-0211502	Eastport Public Library Association	PC		Eastport	ME		United States	EIN:010211502								86
+01-0102346	Knights of Pythias of Maine Grand Lodge	EO,GROUP,LODGE		Hanover	ME		United States	EIN:010102346								35
+00-2215455	Micro-electronic Centre of North Carolina	PC		Research Triangle	NC		United States	EIN:002215455								17
+01-0207025	Green Lawn Rest Association	EO		Clinton	ME		United States	EIN:010207025								72
+01-0207025	Green Lawn Rest Association	EO		Clinton	ME		United States	EIN:010207025								72
+00-7764840	Tri-County Lighthouse Baptist Church & Ministries Inc.	PC		Deerfield St.	NJ		United States	EIN:007764840								22
+01-0199596	Maine Medical Center Womens Board Canteen	SOUNK		Portland	ME		United States	EIN:010199596								67
+01-0211484	Bangor Theological Seminary	PC		Bangor	ME		United States	EIN:010211484								78
+00-2067446	Usa National Jr Tennis League	POF		White Plains	NY		United States	EIN:002067446								16
+01-0205019	Riverside Cemetery Corporation	EO		Ft Fairfield	ME		United States	EIN:010205019								69
+01-0211494	Central Maine Medical Center	PC		Lewiston	ME		United States	EIN:010211494								83
+01-0211486	Mt. Desert Island YMCA	PC		Bar Harbor	ME		United States	EIN:010211486								80
+01-0211484	Bangor Theological Seminary	PC		Bangore	ME		United States	EIN:010211484								78
+01-0211515	Jewish Community Council of Bangor	PC		Bangor	ME		United States	EIN:010211515								95
+01-0211515	Jewish Community Council of Bangor	PC		Bangor	ME		United States	EIN:010211515								95
+01-0174648	Eastern Star of New Hampshire Grand Chapter	EO,GROUP,LODGE		Nashua	NH		United States	EIN:010174648								54
+01-0174648	Order of the Eastern Star of New Hampshire Grand Chapter	EO,GROUP,LODGE		Nashua	NH		United States	EIN:010174648								54
+01-0102346	Knights of Pytheas of Grand Maine Lodge	EO,GROUP,LODGE		Hannover	ME		United States	EIN:010102346								35
+01-0211509	Gould Academy	PC		Bethel	ME			EIN:010211509								92
+01-0078060	Henrietta D Goodall Hospital Inc.	PC		Sanford	ME		United States	EIN:010078060								32
+01-0131950	Plant Memorial Home	POF		Bath	MT		United States	EIN:010131950								44
+01-0207716	Victoria Mansion	PC		Portland	ME		United States	EIN:010207716								73
+01-0191822	Veterans of Foreign Wars of the United States Dept of Maine	EO,GROUP		Vassalboro	ME		United States	EIN:010191822								62
+01-0180687	Windsor Improvement Corporation	PC		Windsor	VT			EIN:010180687								58
+00-2296211	Assistance League of Ventura County	PC		Ventura	CA		United States	EIN:002296211								21
+01-0140283	Pine Grove Cemetery Association	EO		Brunswick	ME		United States	EIN:010140283								48
+00-0889899	Academic and Behavioural Clinic	PC		Boston	MA		United States	EIN:000889899								7
+01-0211517	Cedars Nursing Center	PC			MA		United States	EIN:010211517								96
+01-0133442	Oxford County Agricultural Society	PC		Norway	ME		United States	EIN:010133442								47
+01-0133442	Oxford County Agricultural Society	PC		Norway	ME		United States	EIN:010133442								47
+01-0211505	Trustees of Fryburg Academy	PC		Fryeburg			United States	EIN:010211505								89
+01-0205722	Brookside Cemetery Association Inc.	EO		Mount Desert	ME		United States	EIN:010205722								70
+01-0153128	Greater Rumford Community Center	PC		Rumford	ME		United States	EIN:010153128								52
+01-0180687	Windsor Improvement Corporation	PC		Windsor	VT		United States	EIN:010180687								58
+01-0199596	Maine Medical Center Womens Board Canteen & Gift Shop	SOUNK		Portland	ME		United States	EIN:010199596								67
+01-0191953	Cumberland Cemetery	EO		Cumberland Ctr	ME		United States	EIN:010191953								63
+01-0211487	Bible Society of Maine	PC		Portland	ME		United States	EIN:010211487								81
+01-0211487	Bible Society of Maine	PC		Portland	ME		United States	EIN:010211487								81
+01-0211517	Cedars Nursing Care Center Inc.	PC		Portland	ME		United States	EIN:010211517								96
+01-0191822	Veterans of Foreign Wars of the US Departament of Maine	EO,GROUP		Vassalborough	ME		United States	EIN:010191822								62
+01-0211483	Community Health and Counseling Services	PC		Bangor	ME		United States	EIN:010211483								77
+00-0262650	The Society of St. Vincent De Paul of Memphis Inc.	PC		Memphis	TN		United States	EIN:000262650								1
+01-0145133	Prouts Neck Association	PC		Scarborough	ME		United States	EIN:010145133								50
+01-0202467	Mount Desert Island Biological Laboratory	PC		Salsbury Cove	ME		United States	EIN:010202467								68
+01-0211526	Maine Council of Churches	PC		Portland	ME		United States	EIN:010211526								97
+01-0211526	Maine Council of Churches	PC		Portland	ME		United States	EIN:010211526								97
+01-0179500	Webber Hospital Association	PC		Biddeford	ME			EIN:010179500								56
+00-1056907	Payabya Inc.	PC		Hudson	MA		United States	EIN:001056907								12
+00-2067446	Usta National Junior Tennis League Inc.	POF		White Plains	NY		United States	EIN:002067446								16
+01-0130427	Bridgeton Hospital	PC		Brighton	ME		United States	EIN:010130427								42
+01-0104976	St Andrew Church	PC		Los Alamitos	CA		United States	EIN:010104976								37
+00-7764840	Three-County Light House Baptist Church	PC		Deerfield	NJ		United States	EIN:007764840								22
+01-0199433	Portland Players	PC		St Portland	ME		United States	EIN:010199433								66
+01-0211485	Young Mens Christian Association Bangor	PC		Bangor	ME		United States	EIN:010211485								79
+01-0211485	Young Mens Christian Association Bangor	PC		Bangor	ME		United States	EIN:010211485								79
+01-0211505	The Trustees of Fryeburg Academy	PC		Fryeburg	ME		United States	EIN:010211505								89
+01-0131335	Oak Grove Cemetery Association	EO		Gardener	ME		United States	EIN:010131335								43
+01-0153960	St. Andrews Hospital	PC		Boothbay Hbr	ME		United States	EIN:010153960								53
+01-0211476	The Chapman House	PC		Auburn	ME		United States	EIN:010211476								74
+01-0211508	Good Will Home Association	PC		Hincklay	ME		United States	EIN:010211508								91
+01-0019705	Ancient Free And Accepted Masons of Maine	EO,GROUP,LODGE		Portland	ME		United States	EIN:010019705								26
+01-0207716	Victoria Mansion	PC		Portland			United States	EIN:010207716								73
+01-0024645	Bangor Symphony Orchestra	PC		Bancore			United States	EIN:010024645								28
+01-0211532	Kents Hill School	PC		Kents Hill	ME		United States	EIN:010211532								99
+01-0198331	Maine Coast Regional Health Facilities	PC		Elsworth	ME		United States	EIN:010198331								65
+01-0177170	Waldo County General Hospital	PC		Belfast	ME		United States	EIN:010177170								55
+01-0177170	Waldo County General Hospital	PC		Belfast	ME		United States	EIN:010177170								55
+01-0191550	Northern Maine Fair Association	PC		Presque Isle	ME		United States	EIN:010191550								61
+01-0092600	Hope Cemetery Corp.	EO		Kenbunk			United States	EIN:010092600								33
+01-0211530	Maine Historical Society	PC		Portland	ME		United States	EIN:010211530								98
+01-0196359	Iris Network	PC		Portland	ME		United States	EIN:010196359								64
+01-0196359	Iris Network	PC		Portland	ME		United States	EIN:010196359								64
+01-0211533	McArthur Library Foundation	PC		Biddeford	ME		United States	EIN:010211533								100
+01-0124810	Mt. Hope Cemetery Corp	EO		Bangor	ME		United States	EIN:010124810								39
+01-0211507	Good Samaritan Agency	PC		Bangor	ME		United States	EIN:010211507								90
+01-0211507	Good Samaritan Agency	PC		Bangor	ME		United States	EIN:010211507								90
+01-0132610	Orchard Grove Cemetery Association	EO		Kittery	ME		United States	EIN:010132610								45
+01-0186800	Young Mens Christian Association State of Maine	PC		Winthrop	ME		United States	EIN:010186800								59
+01-0211478	United Way of Eastern Maine	PC		Bangor			United States	EIN:010211478								75
+01-0043788	Community Christmas Project Inc.	PC		Pittsfield	ME		United States	EIN:010043788								30
+01-0180531	West Oxford Agricultural Society	PC		Fryeburg	ME		United States	EIN:010180531								57
+01-0211509	Gould Academy	PC		Bethel	ME		United States	EIN:010211509								92
+01-0211497	President & Trustees of Colby College	PC		Waterville	ME		United States	EIN:010211497								84
+01-0104976	Saint Andrew Church	PC		Los Alamitos	CA		United States	EIN:010104976								37
+01-0114721	Mechanic Falls Maple Hill Cemetery	EO		Norway	ME		United States	EIN:010114721								38
+00-1049015	Marshfield Womenaid Inc.	PC		Marshfield	MA		United States	EIN:001049015								11
+01-0179500	Webber Hospital Association	PC		Biddeford	ME		United States	EIN:010179500								56
+01-0015091	Hanover Soccer Club Inc.	PC		Cedar Knolls	NJ		United States	EIN:010015091								24
+01-0024907	Bar Harbor Village Improvement Association	POF		Bar Harbor	ME		United States	EIN:010024907								29
+01-0202467	Mount Desert Island Biological Lab	PC		Salisbury Cove	ME			EIN:010202467								68
+01-0211533	McArthur Library Association	PC		Biddeford	ME		United States	EIN:010211533								100
+01-0205722	Brookside Cemetery Inc.	EO		Mount Desert	ME		United States	EIN:010205722								70
+01-0198331	Maine Coast Regional Health Facilities	PC		Ellsworth	ME		United States	EIN:010198331								65
+01-0092600	Hope Cemetery Corporation	EO		Kennebunk	ME		United States	EIN:010092600								33
+01-0191953	Cumberland Cemetery Association	EO		Cumberland Ctr	ME		United States	EIN:010191953								63
+01-0024155	Bangor Band	PC		Bangor	ME		United States	EIN:010024155								27
+01-0211512	Home for the Aged	PC		Portland	ME		United States	EIN:010211512								93
+01-0019705	Ancient Free & Accepted Masons of Maine Grand Lodge	EO,GROUP,LODGE		Portland	ME		United States	EIN:010019705								26
+01-0211508	Good Will Home Association	PC		Hinckley	ME		United States	EIN:010211508								91
+01-0211512	Home for the Elderly	PC		Portland	ME		United States	EIN:010211512								93
+00-1056907	Payiabya Org	PC		Huston	MA		United States	EIN:001056907								12
+01-0211476	Chapman House	PC		Auborn			United States	EIN:010211476								74
+01-0002847	Hulls Cove Neighborhood Association	PC		Hulls Cove	ME		United States	EIN:010002847								23
+00-0587764	Iglesia Bethesda Inc.	PC		Lowell	MA		United States	EIN:000587764								2
+01-0132625	Order of the Eastern Star of Maine	EO,GROUP,LODGE		West Gardiner	ME		United States	EIN:010132625								46
+00-2296179	Religious Science Church Center of San Diego	PC		San Diego	CA		United States	EIN:002296179								20
+01-0124841	Mt. Pleasant Cemetery Corp	EO		S Portland	ME		United States	EIN:010124841								40
+01-0104905	Laurel Hill Cemetery Association	EO		Saco	ME		United States	EIN:010104905								36
+01-0130427	Bridgton Hospital	PC		Bridgton	ME		United States	EIN:010130427								42
+00-2237333	Lincoln Loan Fund	SOUNK		Fayetteville	AR		United States	EIN:002237333								18
+00-2237333	Lincoln Loan Fund	SOUNK		Fayetteville	AR		United States	EIN:002237333								18
+00-2296211	Assistance League in Venture	PC		Ventura	CA		United States	EIN:002296211								21
+01-0017496	Agamentica Yacht Club of York	PC		York Harbour	ME		United States	EIN:010017496								25
+00-0841363	Agape House of Preyer	PC		Matappan	MA		United States	EIN:000841363								5
+01-0124810	Mountain Hope Cemetery Corporation	EO		Bangor	ME		United States	EIN:010124810								39
+00-1058976	Newton Firefighters Childrens Fund Inc.	PC		Waltham	MA		United States	EIN:001058976								13
+00-1041338	Pandoras Box Productions Inc.	PC		Brookline	MA		United States	EIN:001041338								9
+01-0078060	Henrietta Goodhall Hospital Inc.	PC		Stanford			United States	EIN:010078060								32
+00-2215455	Microelectronic s Center of North Carolina	PC		Research Triangle Pk	NC		United States	EIN:002215455								17
+01-0131335	Oak Grove Cemetery Asso	EO		Gardiner	ME		United States	EIN:010131335								43
+01-0147000	Rangelay Library Assoc.	PC		Rangeley			United States	EIN:010147000								51
+01-0140290	Pine Grove Cemetery Corp	EO		S Portland	ME		United States	EIN:010140290								49
+00-0765634	New Hope Congregation	PC		Boston			United States	EIN:000765634								4
+01-0211488	Trustees of Bloomfield Academy	PC		Skowhegan	ME		United States	EIN:010211488								82
+00-0889899	Academic and Behavioral Clinic Inc.	PC		Boston	MA		United States	EIN:000889899								7
+01-0211503	Franklin Memorial Hospital	PC		Farmington	ME		United States	EIN:010211503								87
+01-0211503	Franklin Memorial Hospital	PC		Farmington	ME		United States	EIN:010211503								87
+01-0211532	Kents Hill School	PC		Kent's Hill	ME		United States	EIN:010211532								99
+01-0145133	Prouts Neck Foundation	PC		Scarboro	ME		United States	EIN:010145133								50
+01-0186800	Young Mens Christian Association of Maine	PC		Winthrop	ME			EIN:010186800								59
+01-0140283	Pine Grove Cemetery Association	EO		Brunswick	ME			EIN:010140283								48
+00-0635913	Ministerio Apostolico Jesucristo Es El Senor Inc.	PC		Lawrence	MA		United States	EIN:000635913								3
+01-0211488	Trustees of Bloomfield Academy	PC		Skewhegan	ME		United States	EIN:010211488								82
+01-0132610	Orchard Grove Cemetery	EO		Kittery	ME		United States	EIN:010132610								45
+00-2296179	Religious Science Church Centre in San Diego	PC		San Diego	CA		United States	EIN:002296179								20
