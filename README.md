@@ -10,7 +10,7 @@ In certain systems we have to deal with lots of low-quality data, containing som
 
 This project is meant to be a playground for developing a deduplication algorithm, and is currently aimed at the domain of various sorts of organizations (e.g. NPO databases). Still, it's small and generic enough, so that it can be easily adjusted to handle other data schemes or data sources.
 
-The repository contains a set of crafted organizations and their duplicates (partially fetched from a handful of resources, partially intentionally modified, partially made up), so that it's convenient to test the algorithm's pieces.
+The repository contains a set of crafted organizations and their duplicates (partially fetched from [IRS](http://www.irs.gov/Charities-&-Non-Profits/Exempt-Organizations-Select-Check), partially intentionally modified, partially made up), so that it's convenient to test the algorithm's pieces.
 
 How do I run this thing?
 ========================
