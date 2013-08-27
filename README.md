@@ -20,13 +20,25 @@ Requires:
 * elasticsearch server running on localhost:9200 (configurable)
 
 ```
-git clone https://github.com/pawelrychlik/duplitector.git
-cd duplitector
-bundle install
-ruby test.rb
+$ git clone https://github.com/pawelrychlik/duplitector.git
+$ cd duplitector
+$ bundle install
+$ ruby lib/duplitector.rb
 ```
 
-For the time being, the configuration can be adjusted directly in `test.rb` (comments included).
+Configuration via command-line arguments:
+```
+$ ruby lib/duplitector.rb --help
+Options:
+   --filename, -f <s>:   Path to test-data filename (default: data/FoundationCenter.txt)
+      --count, -c <i>:   Number of test entries to process
+        --url, -u <s>:   URL to elasticsearch server (default: http://localhost:9200)
+  --threshold, -t <f>:   elasticsearch scoring threshold for differentiating between a duplicate and a unique item
+                         (default: 1.0)
+      --index, -i <s>:   Name of elasticsearch index to use (default: duplitector)
+        --verbose, -v:   Prints more information
+           --help, -h:   Show this message
+```
 
 Example output
 ==============
