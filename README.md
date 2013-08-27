@@ -1,7 +1,7 @@
 duplitector
 ===========
 
-A duplicate data detector engine based on Elasticsearch. It's been successfully used as a proof of concept, piloting an full-blown enterprize solution.
+A duplicate data detector engine based on Elasticsearch. It's been successfully used as a proof of concept, piloting a full-blown enterprize solution.
 
 Context
 =======
