@@ -1,0 +1,1 @@
+ruby lib/duplitector.rb --url 'http://localhost:9200' --index 'duplitector' --threshold 1.0 -v

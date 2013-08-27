@@ -19,9 +19,11 @@ GEM
       faraday_middleware-multi_json (~> 0.0.5)
       hashie (>= 1.2.0)
       multi_json (>= 1.0)
+    trollop (2.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   stretcher
+  trollop
