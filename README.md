@@ -16,14 +16,13 @@ How do I run this thing?
 ========================
 
 Requires:
-* ruby 1.9+ (tested on ruby 1.9.3) with ruby-gems
-* 'stretcher' gem installed
+* ruby 1.9+ (tested on ruby 1.9.3), RubyGems with [bundler](http://rubygems.org/gems/bundler)
 * elasticsearch server running on localhost:9200 (configurable)
 
 ```
 git clone https://github.com/pawelrychlik/duplitector.git
 cd duplitector
-gem install stretcher
+bundle install
 ruby test.rb
 ```
 
