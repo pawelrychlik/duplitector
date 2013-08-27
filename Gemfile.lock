@@ -1,0 +1,27 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    excon (0.16.10)
+    faraday (0.8.7)
+      multipart-post (~> 1.1)
+    faraday_middleware (0.9.0)
+      faraday (>= 0.7.4, < 0.9)
+    faraday_middleware-multi_json (0.0.5)
+      faraday_middleware
+      multi_json
+    hashie (2.0.5)
+    multi_json (1.7.4)
+    multipart-post (1.2.0)
+    stretcher (1.18.1)
+      excon (>= 0.16)
+      faraday (~> 0.8)
+      faraday_middleware (~> 0.9.0)
+      faraday_middleware-multi_json (~> 0.0.5)
+      hashie (>= 1.2.0)
+      multi_json (>= 1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  stretcher
