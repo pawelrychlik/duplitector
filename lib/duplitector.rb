@@ -1,11 +1,11 @@
 require 'stretcher'
 
-require_relative 'test_data'
-require_relative 'deduplicator'
-require_relative 'stats'
-require_relative 'normalizer'
-require_relative 'client_wrapper'
-require_relative 'quality_measurer'
+require_relative 'duplitector/test_data'
+require_relative 'duplitector/deduplicator'
+require_relative 'duplitector/stats'
+require_relative 'duplitector/normalizer'
+require_relative 'duplitector/client_wrapper'
+require_relative 'duplitector/quality_measurer'
 
 log = Logger.new(STDOUT)
 # use DEBUG for more detailed log information
@@ -18,7 +18,7 @@ log.datetime_format = "%H:%M:%S"
 # The last column 'group_id' has a special meaning - every two entries that have the same group_id form a pair of
 # a unique organization and its duplicate. Based on that, it is possible to measure the quality of elasticsearch
 # queries used for finding duplicates, and gather overall statistics.
-filename = 'FoundationCenter.txt'
+filename = 'data/FoundationCenter.txt'
 # Number of organizations to process; nil means all.
 org_count = nil
 organizations = TestData.new(log).read_organizations filename, org_count
