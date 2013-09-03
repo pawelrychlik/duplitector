@@ -15,7 +15,7 @@ opts = Trollop::options do
   # The last column 'group_id' has a special meaning - every two entries that have the same group_id form a pair of
   # a unique organization and its duplicate. Based on that, it is possible to measure the quality of elasticsearch
   # queries used for finding duplicates, and gather overall statistics.
-  opt :filename, 'Path to test-data filename', default: 'data/FoundationCenter.txt'
+  opt :filename, 'Path to test-data filename', default: 'data/testdata.txt'
   # nil means all
   opt :count, 'Number of test entries to process', type: Integer, default: nil
   opt :url, 'URL to elasticsearch server', default: 'http://localhost:9200'
